@@ -1,6 +1,7 @@
 <?php
+require_once 'classes/Utils.php';
+
 if (isset ($_POST)) {
-    var_dump($_POST);
     $email = $_POST["email"];
     
     // Ajouter l'e-mail au fichier email.txt
@@ -10,6 +11,6 @@ if (isset ($_POST)) {
     file_put_contents($filename, $current);
     
     // Rediriger l'utilisateur après l'inscription
-    
+    Utils::redirect('index_obj.php#NL');
 } 
 ?>

@@ -1,7 +1,6 @@
 <?php
 require_once 'layout/header.php';
 require_once 'data/recettes.php';
-//require_once 'subscribe_NL/subscribe_nl.php';
 ?>
 
 <!-- Background image -->
@@ -61,13 +60,13 @@ require_once 'data/recettes.php';
     </div>
 
 <!-- Block 2 : newsletter suscribe -->
-<div class="row p-5 align-baseline" style="background-color: rgba(0, 192, 146, 0.3)">
+<div id="NL" class="row p-5 align-baseline" style="background-color: rgba(0, 192, 146, 0.3)">
     <div class="col-md-5 offset-md-1 mb-3">
-        <form method="POST">
             <h5 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">Inscrivez-vous à notre newsletter</h5>
-            
+
+        <form method="POST" action="subscribe_nl.php">
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Addresse email</label>
+                <!-- <label for="newsletter1" class="visually-hidden">Addresse email</label> -->
                 <input type="text" class="form-control"  name="email"  placeholder="Votre adresse email">
                 <button class="btn btn-primary" type="submit" >S'inscrire</button>
             </div>
