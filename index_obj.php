@@ -3,6 +3,24 @@ require_once 'layout/header.php';
 require_once 'data/recettes.php';
 ?>
 
+<?php 
+if (isset($_POST['email'])) { // Formulaire soumis
+    require_once 'classes/Email.php';
+    require_once 'classes/EmailFile.php';
+    require_once 'classes/Utils.php';
+    
+    try {
+        $email = new Email($_POST['email']);
+        $emailsFile = new EmailFile();
+        $emailsFile->add($email);
+        Utils::redirect('confirm_sub.php?email=' . $_POST['email']);
+    } catch (Exception $ex) {
+        $errorMessage = $ex->getMessage();  
+    }
+}
+?>
+
+
 <!-- Background image -->
 <div class="text-center bg-image d-flex justify-content-center align-items-center" style="background-image: url('uploads/img/home_img.png'); height: 50vh;">
         <div>
@@ -64,17 +82,19 @@ require_once 'data/recettes.php';
     <div class="col-md-5 offset-md-1 mb-3">
             <h5 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">Inscrivez-vous à notre newsletter</h5>
 
-        <form method="POST" action="subscribe_nl.php">
+        <form method="POST" action="">
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                <!-- <label for="newsletter1" class="visually-hidden">Addresse email</label> -->
                 <input type="text" class="form-control"  name="email"  placeholder="Votre adresse email">
                 <button class="btn btn-primary" type="submit" >S'inscrire</button>
             </div>
         </form>
-        <p class="mt-3"><?php 
-            if (isset($_POST['email'])) {
-                echo 'Merci, votre inscription à notre newsletter à bien été prise en compte.';
-            }?>
+
+        <p class="mt-3" >
+            <?php if (isset($errorMessage)) { ?>
+                <div class="alert alert-danger">
+                    <?php echo $errorMessage; ?>
+                </div>
+            <?php } ?>
         </p>
     </div>
 
