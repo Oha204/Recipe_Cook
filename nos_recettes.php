@@ -13,6 +13,8 @@ $currentpage = isset($_GET['page']) ? $_GET['page'] : 1; //récupère numéro pa
 $start = ($currentpage - 1) * $recipesPerPage; // calcule index première recette à afficher sur la page actuelle. Ex: si nous sommes sur la page 2, cela signifie que nous avons déjà affiché 12 recettes sur la page 1, donc nous commencerons à afficher la 13e recette (index 12) sur la page 2.
 $end = $start + $recipesPerPage - 1; // calcule index dernière recette à afficher sur la page actuelle en ajoutant le nombre de recettes par page et en soustrayant 1. Ex: si nous sommes sur la page 2, $start est 12, donc $end serait 12 + 12 - 1 = 23.
 $end = min($end, $totalRecipes - 1); //assure que la valeur de $end n'est pas supérieure à l'index de la dernière recette disponible. Ex: si nous avons 20 recettes au total et que nous sommes sur la page 2, $end =23, mais nous voulons afficher jusqu'à la 20e recette, donc nous prenons le minimum entre 23 et 19 (20 - 1).
+
+
 ?>
 
 
@@ -39,13 +41,26 @@ $end = min($end, $totalRecipes - 1); //assure que la valeur de $end n'est pas su
                     </div>
                 </div>
             </div>
+
+<?php
+//FILTRE CATEGORIE 
+    // $categorie = [];
+
+    // foreach ($categories as $categorie) {
+    //     if (!in_array($categorie->getCategories(), $categorie)) {
+    //         $categorie[] = $categorie->getCategories(['name']);
+    //     }
+    // }
+    // sort($categorie);  
+?>          
             
-            <div class="col-md-3">
-                <select id="categorySelect" class="form-control dropdown-toggle">
-                    <option>Choisir une catégorie</option>
-                    <option>Plats chauds</option>
-                    <option>Plats froids</option>
-                    <option>Desserts</option>
+            <div class="dropdown col-md-3">
+                <select id="categorySelect" class="form-control">
+                    <option value="">Choisir une catégorie</option>
+                        <option value="Entrée">Entrées</option>    
+                        <option value="Plats chaud">Plats chaud</option>
+                        <option value="Plats froid">Plats froid</option>
+                        <option value="Dessert">Desserts</option>
                 </select>
             </div>
         </div>
