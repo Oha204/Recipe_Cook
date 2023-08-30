@@ -6,13 +6,14 @@ require_once 'data/recettes.php';
 
 <?php 
 if (isset($_POST['email'])) { // Formulaire soumis
+    require_once 'classes/DuplicateChecker.php';
     require_once 'classes/Email.php';
     require_once 'classes/EmailFile.php';
     require_once 'classes/Utils.php';
     
     try {
         $email = new Email($_POST['email']);
-        $emailsFile = new EmailFile();
+        $emailsFile = new EmailFile(new DuplicateChecker());
         $emailsFile->add($email);
         Utils::redirect('confirm_sub.php?email=' . $_POST['email']);
     } catch (Exception $ex) {
@@ -20,7 +21,6 @@ if (isset($_POST['email'])) { // Formulaire soumis
     }
 }
 ?>
-
 
 <!-- Background image -->
 <div class="text-center bg-image d-flex justify-content-center align-items-center" style="background-image: url('uploads/img/home_img.png'); height: 50vh;">

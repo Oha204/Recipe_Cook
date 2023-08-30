@@ -2,22 +2,28 @@
 
 class Email
 {
-    private string $adressEmail;
+    private string $addressEmail;
     
     /**
      * @param string $adressEmail
      * @throws InvalidArgumentException if email format is invalid
      */
-    public function __construct(string $adressEmail)
+    public function __construct(string $addressEmail)
     {
-        if (filter_var($adressEmail, FILTER_VALIDATE_EMAIL) === false) {
+        if (filter_var($addressEmail, FILTER_VALIDATE_EMAIL) === false) {
         throw new InvalidArgumentException("Le format de l'email est incorrect");
         }
-        $this->adressEmail = $adressEmail;
+        $this->addressEmail = $addressEmail;
     }
 
-    public function getAdressEmail(): string
+    public function getDomain(): string
     {
-        return $this->adressEmail;
+        $emailParts = explode('@', $this->addressEmail);
+        return $emailParts[1];
+    }
+
+    public function getAddressEmail(): string
+    {
+        return $this->addressEmail;
     }
 }

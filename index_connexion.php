@@ -3,9 +3,21 @@ require_once 'layout/header.php';
 require_once 'data/recettes.php';
 require_once 'classes/ErrorMess.php';
 require_once 'classes/Utils.php';
+
+// Add News User
+if (isset($_POST['mail']) && isset($_POST['password'])) { // Si Formulaire soumis
+    require_once 'functions/functionSQL.php';
+    
+    try {
+        $newuser = addUsers();
+    } catch (PDOException) {
+        echo "Erreur lors de la requête";
+        exit;
+    }
+}
 ?>
 
-<section class="h-100 gradient-form" style="background-color: #eee;">
+<section class="h-100 gradient-form" style="background-color: #eee;"> 
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
@@ -51,6 +63,8 @@ require_once 'classes/Utils.php';
                 </div>
                 </div>
 
+               
+               
             <!-- Droite : Création -->
                 <div class="col-lg-6 d-flex align-items-center justify-content-center  gradient-custom-2">
                 <div class="text-white pt-5">    
@@ -60,30 +74,30 @@ require_once 'classes/Utils.php';
                         <p class="mb-4" style="font-size: 20px;"> Créez-vous en un </p>
                     </div>
 
-                        <form>
+                        <form method="POST" action=""> 
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
-                                    <label class="form-label" for="email">Email*</label>
-                                    <input type="email" class="form-control" required />
+                                    <label class="form-label" for="mail">Email*</label>
+                                    <input name="mail" type="mail" class="form-control" required />
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-label" for="paswword">Mot de passe*</label>
-                                    <input type="password" class="form-control" required />             
+                                    <input type="password" name="password" class="form-control" required />             
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row align-items-center mb-4">
                                 <div class="form-outline flex-fill mb-0">
                                     <label class="form-label" for="paswwordok">Confirmez votre mot de passe*</label>
-                                    <input type="password" class="form-control" required  />
+                                    <input type="password" name="password_verif" class="form-control" required  />
                                 </div>
                             </div>
 
                             <div class="text-center pt-1 mb-5 pb-1">
-                                <a class="btn btn-outline-light btn-lg " href="#" role="button">S'inscrire</a>
+                                <button type="submit" class="btn btn-outline-light btn-lg " role="button">S'inscrire</button>
                             </div>
                         </form>
                 </div>
