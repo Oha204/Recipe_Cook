@@ -1,0 +1,13 @@
+{
+    "name": "ld-web/composer-intro",
+    "description": "Composer intro cours PhP HB",
+    "authors": [
+        {
+            "name": "Camille Janin",
+            "email": "cjanin@stagiaire-humanbooster.com"
+        }
+    ],
+    "require": {
+        "symfony/mailer": "^6.3"
+    }
+}

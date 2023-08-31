@@ -49,6 +49,18 @@ function addUsers () {
         Utils::redirect('../confirm_registration.php?email=' . $_POST['mail']); // Evolution : mettre le lien pour le côté client
 }
 
+//Fonction permettant de récupérer les recettes dans notre BDD
+function getRecipesCook() : array {
+    $pdo = getDbConnection();
+    $stmt = $pdo->query(
+        "SELECT *, categories.name_cat, categories.img_icon_cat
+        FROM recettes 
+        INNER JOIN categories ON recettes.categories_id = categories.id");
+    
+    $recettes = $stmt->fetchAll();
+    return $recettes;
+}
+
 // Inscription Newsletter - via "index_obj.php" - Si j'ai le temps 
     // $pdo = getDbConnection();
     // try {
@@ -61,11 +73,3 @@ function addUsers () {
     // }    
 
 
-//Fonction permettant de récupérer les recettes dans notre BDD
-function getRecipesCook() : array {
-    $pdo = getDbConnection();
-    $stmt = $pdo->query("SELECT * FROM recettes");
-    
-    $recettes = $stmt->fetchAll();
-    return $recettes;
-}
