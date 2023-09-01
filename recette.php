@@ -1,57 +1,54 @@
 <?php
 require_once 'layout/header.php';
-require_once 'classes/Recette.php';
-
-
-if (!isset($_GET['id'])) { // Si pas de paramètre 'id' dans l'URL
-  // Redirection
-    header('Location: index_obj.php');
-    exit;
-}
+require_once 'functions/functionSQL.php';
 
 // J'extraie l'ID de l'URL
-$id = intval($_GET['id']);
+$id = $_GET['id'] ?? null;
 
-// Je récupère mes données de recettes
-require_once 'data/recettes.php';
-
-// J'extraie tous les ID de toutes les recettes dans un tableau "ids"
-$ids = array_map(fn (Recette $recipe) => $recipe->getId(), $recipesObjects);
-
-// Je cherche l'ID de l'URL dans le tableau des ID des recettes
-$recipeKey = array_search($id, $ids);
-
-// Vérification de l'existence de l'ID dans le tableau 
-if ($recipeKey === false) {
-    http_response_code(404);
-    echo "Produit non trouvé";
+if ($id === null) { 
+    echo "Merci de préciser un id";
     exit;
 }
 
-$selectedRecipe = $recipesObjects[$recipeKey];
-//var_dump($recipesObjects[$recipeKey]);
+// COnnexion à la BDD
+$pdo = getDbConnection();
+
+$stmtRecipeItem = $pdo->prepare("SELECT * FROM recettes WHERE id=:id_recette");
+$stmtRecipeItem->execute(['id_recette' => $id]);
+
+$recette = $stmtRecipeItem->fetch(); // soit le produit, s'il est trouvé, soit false
+
+
+// Vérification de l'existence de l'ID dans le tableau 
+if ($recette === false) {
+    http_response_code(404);
+    echo "Not found";
+    exit;
+}
+
 ?>
 
 <!-- Détails Page recette en fonction de l'iD -->
 <!-- Left part -->
-<?php if ($selectedRecipe) : ?>
         <div class="row"> 
             <div class="col-md-8 p-0"> 
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="uploads/img/curry-lentilles-chou-fleur2.png" class="d-block w-100" alt="<?php echo $selectedRecipe->getTitre(); ?>">
+                            <img src="uploads/img/<?php echo $recette['img_second']?>" class="d-block w-100" alt="<?php echo $recette['title'];?>">
                         </div>
                         <div class="carousel-item">
-                            <img src="uploads/img/curry-lentilles-chou-fleur.png" class="d-block w-100" alt="<?php echo $selectedRecipe->getTitre(); ?>">
+                            <img src="uploads/img/<?php echo $recette['img_tert']?>" class="d-block w-100" alt="<?php echo $recette['title'];?>">
                         </div>
                         <div class="carousel-item">
-                            <img src="uploads/img/curry-lentilles-chou-fleur3.png" class="d-block w-100" alt="<?php echo $selectedRecipe->getTitre(); ?>">
+                            <img src="uploads/img/<?php echo $recette['img_quatr']?>" class="d-block w-100" alt="<?php echo $recette['title'];?>">
                         </div>
                     </div>
+
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="color: black;">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     </button>
+
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     </button>
@@ -63,48 +60,40 @@ $selectedRecipe = $recipesObjects[$recipeKey];
                 <div style="padding-left: 40px; padding-right: 80px; padding-top: 40px; padding-bottom: 30px;">  
                     <div>
                         <div class="px-5 pb-3">
-                            <p class="text-center">Auteur : <?php echo $selectedRecipe->getAuteur(); ?></p>
-                            <h2 class="text-center" style="font-weight: 600;"><?php echo $selectedRecipe->getTitre(); ?></h2>
+                            <p class="text-center">Auteur : <?php echo $recette['author'];?></p>
+                            <h2 class="text-center" style="font-weight: 600;"><?php echo $recette['title'];?></h2>
                         </div>
 
                         <div class="row">
                             <p class="mb-5">
-                                <?php 
-                                    foreach ($selectedRecipe->getCategories() as $catIndex) { ?>
-                                        <div class="">
-                                            <img src="<?php echo $categorie[$catIndex]['img']; ?>" style="width: 25px;">
-                                            <?php echo $categorie[$catIndex]['name']; ?>
-                                        </div> 
-                                <?php } ?>
+                                <div class="cat">
+                                    <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" style="width: 35px;">
+                                    <?php echo $recette['name_cat']; ?>
+                                    <!-- $recette est la jointure entre categorie et recette -->
+                                </div>
                             </p>
-                            <p class="mb-0">Date de publication : <?php echo $selectedRecipe->getDatePubli(); ?></p>
+                            <p class="mb-0">Date de publication : <?php echo $recette['publication_date']; ?></p>
                         </div>
                     </div>
 
                     <div>
                         <h4 class="my-3">Ingrédients</h4>
                         <ul>
-                            <?php foreach ($selectedRecipe->getIngredients() as $ingredient) { ?>
-                                <li><?php echo $ingredient; ?></li>
-                            <?php } ?>
+                            <li><?php echo $recette['ingredient']; ?></li>
                         </ul>
                     </div>    
 
                     <div>
                         <h4 class="mb-3">Ustensiles</h4>
                         <ul>
-                            <?php foreach ($selectedRecipe->getUstensiles() as $ustensil) { ?>
-                                <li><?php echo $ustensil; ?></li>
-                            <?php } ?>
+                            <li><?php echo $recette['cooking_tool']; ?></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="mb-3">Préparation</h4>
                         <ul>
-                            <?php foreach ($selectedRecipe->getPreparation() as $step => $description) { ?>
-                                <li><?php echo $step; ?>: <?php echo $description; ?></li>
-                            <?php } ?>
+                            <li><?php echo $recette['steps']; ?></li>
                         </ul>
                     </div>
                 </div>
@@ -114,10 +103,6 @@ $selectedRecipe = $recipesObjects[$recipeKey];
                 </div>
             </div>    
         </div> 
-
-<?php else : ?>
-    <p class="">Recette non trouvée. Sorry not sorry.</p>
-<?php endif; ?>
 
     </body>
 </html>

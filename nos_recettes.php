@@ -79,7 +79,6 @@ $end = min($end, $totalRecipes - 1); //assure que la valeur de $end n'est pas su
         <?php 
         for ($i = $start; $i <= $end; $i++) {
             $recette = $recettes[$i]; ?>
-            
             <div class="col-md-5 col-lg-3" id="cardset">
                 <div class="card rounded h-100 justify-content-center align-items-center" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);">
                     <img src="uploads/img_plat/<?php echo $recette['img_principale']?>" class="card-img-top" alt="">
@@ -92,7 +91,6 @@ $end = min($end, $totalRecipes - 1); //assure que la valeur de $end n'est pas su
                                 <div class="cat">
                                     <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" style="width: 35px;">
                                     <?php echo $recette['name_cat']; ?>
-                                    <!-- $recette est la jointure entre categorie et recette -->
                                 </div>
                             </div>
                             

@@ -1,6 +1,6 @@
 
-<footer class="pt-5 pl-5 pr-5 mb-0 " style="background-color: #264653;">
-    <div class="row">
+<footer class="pt-5 pr-5 mb-0 " style="background-color: #264653;">
+    <div class="row mb-4" id="footer_menu">
         <div class="col-6 col-md-2 mb-3">
             <h5 class="text-white">A propos</h5>
             <ul class="nav flex-column">
@@ -31,7 +31,7 @@
             </ul>
         </div>
 
-        <div class="col-md-5 offset-md-1 mb-3">
+        <div class="col-6 col-md-2 mb-3">
             <form>
                 <h5 class="mb-3 text-white">Suivez-nous sur les réseaux !</h5>
                     <div class="d-flex flex-row  gap-2">

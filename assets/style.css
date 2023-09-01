@@ -113,3 +113,8 @@
             border-color: white;
         }
 
+/* FOOTER */
+#footer_menu {
+    display : flex;
+    justify-content: center;
+}
