@@ -2,6 +2,8 @@
 require_once 'layout/header.php';
 require_once 'functions/functionSQL.php';
 
+
+
 // J'extraie l'ID de l'URL
 $id = $_GET['id'] ?? null;
 
@@ -9,7 +11,6 @@ if ($id === null) {
     echo "Merci de préciser un id";
     exit;
 }
-
 // COnnexion à la BDD
 $pdo = getDbConnection();
 

@@ -1,7 +1,7 @@
 <?php
 require_once 'layout/header.php';
 require_once 'data/recettes.php';
-
+require_once 'functions/functionSQL.php';
 ?>
 
 <?php 
@@ -20,6 +20,9 @@ if (isset($_POST['email'])) { // Formulaire soumis
         $errorMessage = $ex->getMessage();  
     }
 }
+
+
+$recettes = getRecipesCook();
 ?>
 
 <!-- Background image -->
@@ -43,28 +46,28 @@ if (isset($_POST['email'])) { // Formulaire soumis
         <div class="row justify-content-center">
             <?php 
                 $count = 0; 
-                foreach ($recipesObjects as $recipe) { 
+                foreach ($recettes as $recette) { 
                     if ($count < 4) { 
             ?>
             
             <div class=" col-md-5 col-lg-3 ">
                 <div class="card rounded h-100 justify-content-center align-items-center" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);">
-                    <img src="<?php echo $recipe->getImg(); ?>" class="card-img-top" alt="">
+                    <img src="uploads/img_plat/<?php echo $recette['img_principale']?>" class="card-img-top" alt="">
+                    
                     <div class="card-body d-flex flex-column text-center h-100"> 
                         <div>
-                            <h2 class="card-title"><?php echo $recipe->getTitre(); ?></h2>
-                            <div class="d-flex justify-content-center align-items-center mb-2">
-                            <?php foreach ($recipe->getCategories() as $catIndex) { ?>
-                                    <div class="cat">
-                                        <img src="<?php echo $categorie[$catIndex]['img']; ?>" style="width: 25px;">
-                                        <?php echo $categorie[$catIndex]['name']; ?>
-                                    </div>
-                                <?php } ?>
+                            <h2 class="card-title"><?php echo $recette['title']; ?></h2>
+                            
+                            <div class="d-flex justify-content-center align-items-center mb-2">    
+                                <div class="cat">
+                                    <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" style="width: 35px;">
+                                    <?php echo $recette['name_cat']; ?>
+                                </div>
                             </div>
                         </div>
                         
                         <div class="mb-4 mt-3">
-                            <a href="recette.php?id=<?php echo $recipe->getId(); ?>" class="btn btn-outline-dark" id="btn_voir_plus">Voir plus</a>
+                            <a href="recette.php?id=<?php echo $recette['id']; ?>" class="btn btn-outline-dark" id="btn_voir_plus">Voir plus</a>
                         </div>
                     </div>
                 </div>

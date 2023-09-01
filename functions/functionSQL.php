@@ -56,11 +56,10 @@ function getRecipesCook() : array {
         "SELECT recettes.id, recettes.img_principale, recettes.title, recettes.categories_id, categories.name_cat, categories.img_icon_cat
         FROM recettes 
         INNER JOIN categories ON recettes.categories_id = categories.id
-        ORDER BY recettes.id ASC");
+        ORDER BY recettes.publication_date DESC");
     
     $recettes = $stmt->fetchAll();
     return $recettes;
-    var_dump($recettes);
 }
 
 // Inscription Newsletter - via "index_obj.php" - Si j'ai le temps 
