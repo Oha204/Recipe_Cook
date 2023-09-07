@@ -21,7 +21,6 @@ if (isset($_POST['email'])) { // Formulaire soumis
     }
 }
 
-
 $recettes = getRecipesCook();
 ?>
 

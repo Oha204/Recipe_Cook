@@ -1,6 +1,5 @@
 <?php
 require_once 'layout/header.php';
-require_once 'data/recettes.php';
 require_once 'classes/ErrorMess.php';
 require_once 'classes/Utils.php';
 
@@ -40,8 +39,6 @@ if (isset($_POST['mail']) && isset($_POST['password'])) { // Si Formulaire soumi
                         </div>
                     </div>
 
-                    
-
                     <form id="login-form" method="POST" action="auth.php">
                         <div class="form-outline mb-4">
                             <label class="form-label" for="email">Email</label>
@@ -63,8 +60,6 @@ if (isset($_POST['mail']) && isset($_POST['password'])) { // Si Formulaire soumi
                 </div>
                 </div>
 
-               
-               
             <!-- Droite : Création -->
                 <div class="col-lg-6 d-flex align-items-center justify-content-center  gradient-custom-2">
                 <div class="text-white pt-5">    

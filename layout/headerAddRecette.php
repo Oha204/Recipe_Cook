@@ -18,8 +18,6 @@
         </a>
 
         <div class="text-center pt-4 mb-3 pb-1 col-md-3 text-end">
-            <a class="btn btn-light pt-0 px-2"><img src="assets/icons/view.png" class="card-img-top" alt="" style="width: 20px;"></a>
-            <a href="addrecette.php" class="btn btn-outline-light" id="btn_addnew" type="button">Publier</a> 
-            <a href="logout.php" class="btn btn-outline-danger" id="btn_deco" type="button">Se déconnecter</a>  
+            <a href="active_recette.php" class="btn btn-outline-light" id="btn_voir_plus" type="button">Retour Backoffice</a>  
         </div>
 </header>

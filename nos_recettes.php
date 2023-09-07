@@ -4,7 +4,7 @@ require_once 'data/recettes.php';
 require_once 'classes/Recette.php';
 require_once 'functions/functionSQL.php';
 
-// CO BDD
+// CO BDD + fonction récupération recette
 try {
     $recettes = getRecipesCook();
 } catch (PDOException) {

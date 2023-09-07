@@ -53,7 +53,7 @@ function addUsers () {
 function getRecipesCook() : array {
     $pdo = getDbConnection();
     $stmt = $pdo->query(
-        "SELECT recettes.id, recettes.img_principale, recettes.title, recettes.categories_id, categories.name_cat, categories.img_icon_cat
+        "SELECT recettes.id, recettes.publication_date, recettes.img_principale, recettes.title, recettes.categories_id, categories.name_cat, categories.img_icon_cat
         FROM recettes 
         INNER JOIN categories ON recettes.categories_id = categories.id
         ORDER BY recettes.publication_date DESC");

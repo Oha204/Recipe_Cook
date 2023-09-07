@@ -11,7 +11,7 @@ if ($id === null) {
     echo "Merci de préciser un id";
     exit;
 }
-// COnnexion à la BDD
+// CO à la BDD
 $pdo = getDbConnection();
 
 $stmtRecipeItem = $pdo->prepare("SELECT * FROM recettes WHERE id=:id_recette");
@@ -70,7 +70,6 @@ if ($recette === false) {
                                 <div class="cat">
                                     <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" style="width: 35px;">
                                     <?php echo $recette['name_cat']; ?>
-                                    <!-- $recette est la jointure entre categorie et recette -->
                                 </div>
                             </p>
                             <p class="mb-0">Date de publication : <?php echo $recette['publication_date']; ?></p>
