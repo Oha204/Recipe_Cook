@@ -2,18 +2,25 @@
 require_once 'layout/headerAddRecette.php';
 require_once 'functions/addrecipe.php';
 
+
 // Add News Recipe
 if (isset($_POST['title']) && 
     isset($_POST['author']) && 
     isset($_POST['publication_date']) && 
+    isset($_FILES['img_principale']['name']) && 
+    isset($_FILES['img_second']['name']) &&
+    isset($_FILES['img_tert']['name']) &&
+    isset($_FILES['img_quatr']['name']) &&
     isset($_POST['ingredient']) && 
     isset($_POST['cooking_tool']) && 
     isset($_POST['steps']) && 
     isset($_POST['categories_id'])
     ) { 
         require_once 'functions/addrecipe.php';
+        require_once 'functions/upload_img.php';
         try {
         $newrecipe = addRecipes();
+        $upload = uploadImg();
         } catch (PDOException) {
             echo "Erreur lors de la requête";
             exit;
@@ -26,7 +33,7 @@ if (isset($_POST['title']) &&
 
 <div class="container mt-4">
     <div class="row">
-        <form action="" method="POST">
+        <form enctype="multipart/form-data" method="POST">
             <div class="row">
                 <div class="col-md-6">
                     <!-- left part -->
@@ -38,12 +45,24 @@ if (isset($_POST['title']) &&
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="img_principale" class="form-label mb-2">Image principale</label>
-                            <input type="file" class="form-control" id="img_principale" name="img_principale" accept="image/*" style="font-size:14px;">
+                            <input type="file" class="form-control" name="img_principale" style="font-size:14px;">
                         </div>
 
                         <div class="col-md-6">
-                            <label for="additionalImages" class="form-label mb-2">Images complémentaires</label>
-                            <input type="file" class="form-control" id="additionalImages" name="additionalImages" accept="image/*" multiple style="font-size:14px;">
+                            <label for="img_second" class="form-label mb-2">Images complémentaires #1</label>
+                            <input type="file" class="form-control" id="img_second" name="img_second" accept="image/*" multiple style="font-size:14px;">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="img_tert" class="form-label mb-2">Image complémentaires #2</label>
+                            <input type="file" class="form-control" id="img_tert" name="img_tert" accept="image/*" style="font-size:14px;">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="img_quatr" class="form-label mb-2">Images complémentaires #3</label>
+                            <input type="file" class="form-control" id="img_quatr" name="img_quatr" accept="image/*" multiple style="font-size:14px;">
                         </div>
                     </div>
 
@@ -84,7 +103,8 @@ if (isset($_POST['title']) &&
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="steps" class="form-label">Étapes de préparation (une par ligne)</label>
-                        <textarea class="form-control" id="steps" name="steps" rows="25" placeholder="Vos étapes de préparation. 
+                        <textarea class="form-control" id="steps" name="steps" rows="28" 
+                        placeholder="Vos étapes de préparation. 
         - étape 1 : votre texte ici .... 
         - étapes 2 : votre texte ici .... 
         - etc ..." required>

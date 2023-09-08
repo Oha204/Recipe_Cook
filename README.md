@@ -94,6 +94,11 @@ Création fichier fonctions "addrecipe.php" (renommage futur : "functionAddRecip
 
 Je termine par mettre en place une condition sur la page "addrecette.php" où si le formulaire est soumis et remplis, alors la fonction addRecipes() et ajouter ma recette à ma BDD.
 
+#### Upload d'image 
+Création d'un fichier "upload_img.php" dans dossier "functions" où j'y déclare ma fonction concernant le téléchargement des images.
+
+💥 Difficultées : Je voulais que mon image principale s'enregistre dans le dossier "img_plat" et les images complémentaires dans un dossier "img_complementaire", cependant j'ai une erreur de droit d'accès au dossier que je n'arrive pas à corriger. J'ai donc réalisé l'enregistrement de toutes mes images dans le dossier "img_plat".
+
 ### Supprimer une recette
 le bouton supprimer récupère l'id de ma recette grâce à mon try/catch situé en haut de ma page "active_recette.php". Si l'id est ok, alors on peut lancer la fonction de suppresion (deleteRecipes()) créée dans le fichier "deleteRecipe.php", sinon message d'erreur :
 

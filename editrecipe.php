@@ -4,19 +4,19 @@ require_once 'functions/editRecipe.php';
 require_once 'functions/functionSQL.php';
 
 $id = $_GET['id'] ?? null;
-if ($id === null) { 
-    echo "Erreur. Aucune recette trouvée";
-    exit;
-}
-
-
-
 $pdo = getDbConnection();
 
 $stmtRecipeItem = $pdo->prepare("SELECT * FROM recettes WHERE id=:id");
 $stmtRecipeItem->execute(['id' => $id]);
 
 $recette = $stmtRecipeItem->fetch();
+
+
+if ($recette === false) {
+    http_response_code(404);
+    echo "Not found";
+    exit;
+}
 
 // try {
 //     $recettes = editRecipes();
@@ -32,8 +32,6 @@ $recette = $stmtRecipeItem->fetch();
 
 <div class="container mt-4">
     <div class="row">
-    <?php  
-        // foreach ($recettes as $recette) { ?>
         <form action="" method="POST">
             <div class="row">
                 <div class="col-md-6">
@@ -80,7 +78,7 @@ $recette = $stmtRecipeItem->fetch();
 
                     <div class="mb-3">
                         <label for="ingredient" class="form-label mb-2">Ingrédients (un par ligne)</label>
-                        <textarea class="form-control" id="ingredient" name="ingredient" rows="4" placeholder="Vos ingrédients ..."  value ="<?php echo $recette['ingredient']?>" required></textarea>
+                        <textarea class="form-control" id="ingredient" name="ingredient" rows="4" value ="<?php echo $recette['ingredient']?>" placeholder="Vos ingrédients ..." required></textarea>
                     </div>
 
                     <div class="mb-3">
@@ -96,7 +94,7 @@ $recette = $stmtRecipeItem->fetch();
                         <textarea class="form-control" id="steps" name="steps" rows="25" placeholder="Vos étapes de préparation. 
         - étape 1 : votre texte ici .... 
         - étapes 2 : votre texte ici .... 
-        - etc ..." value ="<?php echo $recette['steps']?>"required>
+        - etc ..." value ="<?php echo $recette['steps']?>" required>
                         </textarea>
                     </div>
                 </div>
@@ -106,7 +104,6 @@ $recette = $stmtRecipeItem->fetch();
                 <button class="btn btn-outline-light mb-4" id="btn_addnew" type="submit"  role="button">Mettre à jour</button>
             </div>
         </form>
-        <?php //} ?>
     </div>
 </div>
 
