@@ -1,10 +1,10 @@
 <?php
+//require_once 'functions/pagination.php'; 
+//require_once 'classes/Recette.php';
+//require_once 'data/recettes.php';
 require_once 'layout/headerback.php';
-require_once 'data/recettes.php';
 require_once 'classes/Utils.php';
 require_once 'classes/ErrorMess.php';
-//require_once 'functions/pagination.php';
-require_once 'classes/Recette.php';
 require_once 'functions/functionSQL.php';
 require_once 'functions/deleteRecipe.php';
 
@@ -19,7 +19,7 @@ if (!isset($_SESSION['email'])) {
     Utils::redirect('index_connexion.php?error=' . ErrorMess::ADMIN_ACCESS_ERROR);
 }
 
-// CO BDD
+// CO BDD + récup recettes
 try {
     $recettes = getRecipesCook();
 } catch (PDOException) {
@@ -42,7 +42,6 @@ try {
 try {
     if (isset($_GET['id'])) {
         $id=intval($_GET['id']);
-        // editRecipes($id);
         Utils::redirect('editrecipe.php');
     }
 } catch (PDOException){
@@ -71,7 +70,7 @@ $end = min($end, $totalRecipes - 1);
         <nav >
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" href="active_recette.php">Recettes active</a></li>
-                <li class="nav-item"><a class="nav-link" href="desac_recette.php">Recettes désactivé</a></li>
+                <li class="nav-item"><a class="nav-link" href="desact_recipe.php">Recettes désactivé</a></li>
             </ul>
         </nav>
 </div>
@@ -101,7 +100,7 @@ $end = min($end, $totalRecipes - 1);
 
                                     <div class="mt-2" style="font-size: 14px;">
                                         <p class="mb-0">Date de publication : <?php echo $recette['publication_date'];?></p>
-                                        <p class="mb-1">Note: 3/5</p>
+                                        <p class="mb-1">Note: 3/5</p> <!-- évolution : mettre en place un syst de note -->
 
                                         <a href="recette.php?id=<?php echo $recette['id']; ?>" style="font-size: 14px;">Voir la recette</a>
                                     </div>
@@ -114,7 +113,7 @@ $end = min($end, $totalRecipes - 1);
                                         <button type="submit" class="btn btn-danger pt-0 px-2"name="id" value=<?php echo $recette['id']; ?>><img src="assets/icons/trash.png" class="card-img-top" alt="" style="width: 15px;"> </button>
 
                                         <button type="button" class="btn btn-light pt-0 px-2"><img src="assets/icons/view.png" class="card-img-top" alt="" style="width: 20px;" ></button>
-                                    <!-- A faire : SI active = 1 alors afficher cette image, sinon afficher l'oeil baré -->
+                                    <!-- évolution : activation/désactivation recette. (Si active = 1 alors afficher cette image, sinon afficher l'oeil barré) -->
                                     </form>
                                 </div>
                             </div>  
@@ -146,5 +145,4 @@ $end = min($end, $totalRecipes - 1);
         </div>
 
 </body>
-
 </html>

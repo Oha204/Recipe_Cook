@@ -10,7 +10,7 @@ function uploadImg() {
         $destination = 'uploads/img_plat/' . $filename;
 
         if (move_uploaded_file($file['tmp_name'], $destination)) {
-            echo "<p>Fichier enregistré</p>";
+            echo "";
             }
     } 
 
@@ -21,7 +21,7 @@ function uploadImg() {
         $destination1 = 'uploads/img_plat/' . $filename1;
 
         if (move_uploaded_file($file1['tmp_name'], $destination1)) {
-            echo "<p>Fichier enregistré</p>";
+            echo "";
             }
     } 
 
@@ -32,7 +32,7 @@ function uploadImg() {
         $destination2 = 'uploads/img_plat/' . $filename2;
 
         if (move_uploaded_file($file2['tmp_name'], $destination2)) {
-            echo "<p>Fichier enregistré</p>";
+            echo "";
             }
     } 
 
@@ -43,7 +43,7 @@ function uploadImg() {
         $destination3 = 'uploads/img_plat/' . $filename3;
     
         if (move_uploaded_file($file3['tmp_name'], $destination3)) {
-            echo "<p>Fichier enregistré</p>";
+            echo "";
             }
     } 
 

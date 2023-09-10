@@ -62,15 +62,6 @@ function getRecipesCook() : array {
     return $recettes;
 }
 
-// Inscription Newsletter - via "index_obj.php" - Si j'ai le temps 
-    // $pdo = getDbConnection();
-    // try {
-    //     $sub_news = $pdo->prepare("INSERT INTO newsletter (email) VALUES (:email)");
-    //     $sub_news->execute(['email' => $_POST['email'],]);
-    //     Utils::redirect('../index_obj.php'); 
-    // } catch (PDOException) {
-    //     echo "Erreur lors de la requête";
-    //     exit;
-    // }    
+    
 
 

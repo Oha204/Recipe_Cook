@@ -21,6 +21,7 @@ if (isset($_POST['title']) &&
         try {
         $newrecipe = addRecipes();
         $upload = uploadImg();
+        Utils::redirect('active_recette.php');
         } catch (PDOException) {
             echo "Erreur lors de la requête";
             exit;
@@ -103,11 +104,7 @@ if (isset($_POST['title']) &&
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="steps" class="form-label">Étapes de préparation (une par ligne)</label>
-                        <textarea class="form-control" id="steps" name="steps" rows="28" 
-                        placeholder="Vos étapes de préparation. 
-        - étape 1 : votre texte ici .... 
-        - étapes 2 : votre texte ici .... 
-        - etc ..." required>
+                        <textarea class="form-control" id="steps" name="steps" rows="28" placeholder="Vos étapes de préparation" required>
                         </textarea>
                     </div>
                 </div>
@@ -120,8 +117,7 @@ if (isset($_POST['title']) &&
     </div>
 </div>
 
-
-            
+<!-- Cette chose était une autre version de l'affichage des étapes de ma recette. -->
 
 <!-- Right part - Version 2 (JS) -->
         <!-- <div class="col-md-6 ">
