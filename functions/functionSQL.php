@@ -67,7 +67,3 @@ function getRecipesCook() : array {
     $recettes = $stmt->fetchAll();
     return $recettes;
 }
-
-    
-
-

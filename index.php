@@ -95,7 +95,7 @@ $recettes = getRecipesCook();
         </p>
     </div>
 
-    <div class="col-md-3 " >
+    <div class="col-md-4 d-flex justify-content-center align-items-center" >
         <p class="text-end">Pour ne rien manquer des nouveautés ! Des recettes exclusives vous y attendent, des jeux concours mais aussi pleins d'autres choses.</p>
     </div>
 </div>

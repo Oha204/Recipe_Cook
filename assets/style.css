@@ -62,6 +62,22 @@
     color: white;
 }
 
+#resetFilterButton {
+    display: none;
+    cursor: pointer;
+    margin-left: 10px; 
+}
+
+#resetFilterButton img {
+    width: 20px; 
+    height: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+
 /* page connexion */
 .gradient-custom-2 {
     background: #0c081b;
