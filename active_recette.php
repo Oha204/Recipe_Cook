@@ -63,20 +63,17 @@ $end = min($end, $totalRecipes - 1);
     <h2 class="mt-5 mb-4"><?php echo $welcomeMessage; ?></h2>
 </div>
 
-
 <!-- Menu -->
-
 <div class="container d-flex flex-column justify-content-center align-items-center mt-4">
-        <nav >
-            <ul class="nav nav-tabs">
-                <li class="nav-item"><a class="nav-link active" href="active_recette.php">Recettes active</a></li>
-                <li class="nav-item"><a class="nav-link" href="desact_recipe.php">Recettes désactivé</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" href="active_recette.php">Recettes actives</a></li>
+            <li class="nav-item"><a class="nav-link" href="desact_recipe.php">Recettes désactivées</a></li>
+        </ul>
+    </nav>
 </div>
 
-<!-- Liste recettes active -->
-
+<!-- Liste recettes actives -->
 <div class="container">
     <div class="row">
         <ul class="list-group">
@@ -88,32 +85,32 @@ $end = min($end, $totalRecipes - 1);
                         <div class="col-md-12 px-4">
                             <div class="d-flex justify-content-between mt-3">
                                 <div>
-                                    <h3 style="font-weight: 600;"><?php echo $recette['title'];?></h3>
+                                    <h3 class="recipe-title"><?php echo $recette['title'];?></h3>
 
-                                    <div class="d-flex" style="font-size: 18px;">
-                                        <div class="cat">
-                                            <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" style="width: 35px;">
-                                            <?php echo $recette['name_cat']; ?>
-                                        </div>
-                                        
+                                    <div class="d-flex recipe-category">
+                                    <div class="cat">
+                                        <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" class="recipe-icon">
+                                        <?php echo $recette['name_cat']; ?>
                                     </div>
+                                </div>
 
-                                    <div class="mt-2" style="font-size: 14px;">
+
+                                    <div class="mt-2 recipe-details">
                                         <p class="mb-0">Date de publication : <?php echo $recette['publication_date'];?></p>
                                         <p class="mb-1">Note: 3/5</p> <!-- évolution : mettre en place un syst de note -->
 
-                                        <a href="recette.php?id=<?php echo $recette['id']; ?>" style="font-size: 14px;">Voir la recette</a>
+                                        <a href="recette.php?id=<?php echo $recette['id']; ?>" class="recipe-link">Voir la recette</a>
                                     </div>
                                 </div>
                                 
                                 <div>
                                     <form method="GET" action="">
-                                        <a id="btn_modif" type="submit"  class="btn" style="font-size: 14px;" href="editrecipe.php?id=<?php echo $recette['id']; ?>"><img src="assets/icons/edit-button.png" class="card-img-top" alt="" style="width: 14px; margin-right: 7px;">Modifier</a>
+                                        <a id="btn_modif" type="submit" class="btn" href="editrecipe.php?id=<?php echo $recette['id']; ?>"><img src="assets/icons/edit-button.png" class="card-img-top btn-icon" alt="">Modifier</a>
                                         
-                                        <button type="submit" class="btn btn-danger pt-0 px-2"name="id" value=<?php echo $recette['id']; ?>><img src="assets/icons/trash.png" class="card-img-top" alt="" style="width: 15px;"> </button>
+                                        <button type="submit" class="btn btn-danger pt-0 px-2" name="id" value=<?php echo $recette['id']; ?>><img src="assets/icons/trash.png" class="card-img-top btn-icon" alt=""></button>
 
-                                        <button type="button" class="btn btn-light pt-0 px-2"><img src="assets/icons/view.png" class="card-img-top" alt="" style="width: 20px;" ></button>
-                                    <!-- évolution : activation/désactivation recette. (Si active = 1 alors afficher cette image, sinon afficher l'oeil barré) -->
+                                        <button type="button" class="btn btn-light pt-0 px-2"><img src="assets/icons/view.png" class="card-img-top btn-icon" alt=""></button>
+                                        <!-- évolution : activation/désactivation recette. (Si active = 1 alors afficher cette image, sinon afficher l'oeil barré) -->
                                     </form>
                                 </div>
                             </div>  
@@ -127,22 +124,22 @@ $end = min($end, $totalRecipes - 1);
 
 <!-- Pagination -->
 <div class="mt-4">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <?php if ($currentpage > 1) { ?>
-                    <li class="page-item"><a class="page-link" href="?page=<?php echo $currentpage - 1; ?>" style="color: #264653;">Précédent</a></li>
-                <?php } ?>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <?php if ($currentpage > 1) { ?>
+                <li class="page-item"><a class="page-link" href="?page=<?php echo $currentpage - 1; ?>" style="color: #264653;">Précédent</a></li>
+            <?php } ?>
 
-                <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
-                    <li class="page-item <?php echo ($i == $currentpage) ? 'active' : ''; ?>"><a class="page-link" href="?page=<?php echo $i; ?>" ><?php echo $i; ?></a></li>
-                <?php } ?>
+            <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
+                <li class="page-item <?php echo ($i == $currentpage) ? 'active' : ''; ?>"><a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+            <?php } ?>
 
-                <?php if ($currentpage < $totalPages) { ?>
-                    <li class="page-item"><a class="page-link" href="?page=<?php echo $currentpage + 1; ?>" style="color: #264653;">Suivant</a></li>
-                <?php } ?>
-            </ul>
-        </nav>
-        </div>
+            <?php if ($currentpage < $totalPages) { ?>
+                <li class="page-item"><a class="page-link" href="?page=<?php echo $currentpage + 1; ?>" style="color: #264653;">Suivant</a></li>
+            <?php } ?>
+        </ul>
+    </nav>
+</div>
 
 </body>
 </html>

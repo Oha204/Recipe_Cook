@@ -18,8 +18,8 @@
 
 <body>
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between border-bottom" >
-            <a href="../Recipe_Cook/index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 ">
-                <img class="bi me-2" width="200px" src ="/Recipe_Cook/assets/logo.png" alt="" style="padding-left: 80px;">
+            <a href="../Recipe_Cook/index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 custImgHead">
+                <img class="bi me-2" src ="/Recipe_Cook/assets/logo.png" alt="">
             </a>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">

@@ -25,7 +25,7 @@ $recettes = getRecipesCook();
 ?>
 
 <!-- Background image -->
-<div class="text-center d-flex justify-content-center align-items-center" style="background-image: url('uploads/img/home_img.png'); height: 80vh;">
+<div class="background-image-container text-center d-flex justify-content-center align-items-center">
     <div class="text-white">
         <h1 class="mb-3">Coté recette est là pour vous !</h1>
         <h4 class="mb-5">Découvrez comment préparer de bons petits plats pas-à-pas grâce à de nombreuses recettes.<br />Plats chauds, desserts, apéros, cocktails, vous y trouverez votre bonheur !</h4>
@@ -43,8 +43,8 @@ $recettes = getRecipesCook();
                     if ($count < 4) { 
             ?>
             
-            <div class=" col-md-5 col-lg-3 ">
-                <div class="card rounded h-100 justify-content-center align-items-center" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);">
+            <div class="col-md-5 col-lg-3">
+                <div class="card rounded h-100 justify-content-center align-items-center custom-card">
                     <img src="uploads/img_plat/<?php echo $recette['img_principale']?>" class="card-img-top" alt="">
                     
                     <div class="card-body d-flex flex-column text-center h-100"> 
@@ -53,7 +53,7 @@ $recettes = getRecipesCook();
                             
                             <div class="d-flex justify-content-center align-items-center mb-2">    
                                 <div class="cat">
-                                    <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" style="width: 35px;">
+                                    <img src="assets/icons/<?php echo $recette['img_icon_cat']; ?>" class="cat-icon">
                                     <?php echo $recette['name_cat']; ?>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@ $recettes = getRecipesCook();
                     </div>
                 </div>
             </div>
-            
+
             <?php 
                 $count++; 
                 } 
@@ -75,9 +75,9 @@ $recettes = getRecipesCook();
     </div>
 
 <!-- Block 2 : newsletter suscribe -->
-<div id="NL" class="row p-5 align-baseline" style="background-color: rgba(0, 192, 146, 0.3)">
+<div id="NL" class="row p-5 align-baseline custom-background">
     <div class="col-md-5 offset-md-1 mb-3">
-            <h5 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">Inscrivez-vous à notre newsletter</h5>
+        <h5 class="title-heading">Inscrivez-vous à notre newsletter</h5>
 
         <form method="POST" action="">
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
@@ -86,7 +86,7 @@ $recettes = getRecipesCook();
             </div>
         </form>
 
-        <p class="mt-3" >
+        <p class="mt-3">
             <?php if (isset($errorMessage)) { ?>
                 <div class="alert alert-danger">
                     <?php echo $errorMessage; ?>
@@ -95,10 +95,11 @@ $recettes = getRecipesCook();
         </p>
     </div>
 
-    <div class="col-md-4 d-flex justify-content-center align-items-center" >
+    <div class="col-md-4 d-flex justify-content-center align-items-center">
         <p class="text-end">Pour ne rien manquer des nouveautés ! Des recettes exclusives vous y attendent, des jeux concours mais aussi pleins d'autres choses.</p>
     </div>
 </div>
+
 
 
 <?php require_once 'layout/footer.php'; ?>

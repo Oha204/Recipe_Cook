@@ -1,84 +1,170 @@
+/* Global  */
+#btn_addnew {
+    background: linear-gradient(to right, #264653, #2A9D8F);
+    color: white;
+}
+
+/* Header  */
+.custImgHead img {
+    padding-left: 80px;
+    width: 200px;
+}
+
 /* home page */
+.background-image-container {
+    background-image: url('../uploads/img/home_img.png');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
 .titleh2 {
-    font-size : 35px;
-    font-weight: bold; 
+    font-size: 35px;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-top: 80px;
+    margin: 80px 0;
+}
+
+.col-md-5.col-lg-3, .col-md-5.offset-md-1.mb-3 {
     margin-bottom: 80px;
 }
 
-.btn.btn-sm{
+.custom-background {
+    background-color: rgba(0, 192, 146, 0.3);
+}
+
+.title-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-sm {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 20px;
-    background-color: #f77801;
-    color : white;  
-}
-
-.btn.btn-sm:hover {
-    background-color: #ff9900; 
+    background-color: #264653;
+    border-color: #264653;
     color: white;
 }
 
-.col-md-5.col-lg-3 {
-    margin-bottom: 80px;
-}
-
-.card-img-top {
-    width: 250px;;
-}
-
-.card-title {
-    font-size : 25px;
-    font-weight: 600;
-}
-
-#btn_voir_plus:hover {
+.btn-sm:hover {
+    background-color: white;
     color: #264653;
-    border-color: #264653;
-    background-color: white ;
-}
-
-#btn_voir_plus {
-    background-color: #264653;
-    color: white;
-    border-color: #264653;
-}
-
-/* page liste recette */
-#cardset{
-    margin-bottom: 25px;
-}
-
-#searchButton{
-    background-color: #264653;
-    border-color: white;
-}
-
-.active > .page-link, .page-link.active{
-    background-color: #264653;
-    border-color: white;
-    color: white;
-}
-
-#resetFilterButton {
-    display: none;
-    cursor: pointer;
-    margin-left: 10px; 
-}
-
-#resetFilterButton img {
-    width: 20px; 
-    height: 20px;
 }
 
 .hidden {
     display: none;
 }
 
+/* page liste recette */
+.custom-bg-image {
+    background-image: url('../uploads/img/page-recette-prez.png');
+    height: 50vh;
+}
+
+.custom-heading {
+    font-size: 100px;
+    opacity: 0.5;
+}
+
+#searchButton, #btn_voir_plus {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    background-color: #264653;
+    border-color: #264653;
+    color: white;
+}
+
+#searchButton:hover, #btn_voir_plus:hover {
+    background-color: white;
+    color: #264653;
+}
+
+.col-md-5.col-lg-3 {
+    margin-bottom: 80px;
+}
+
+.custom-card {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cat-icon {
+    width: 35px;
+}
+
+.card-img-top {
+    width: 250px;
+}
+
+.card-title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.filter-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+#resetFilterButton {
+    display: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#resetFilterButton img {
+    width: 20px;
+    height: 20px;
+}
+
+.active > .page-link, .page-link.active {
+    background-color: #264653;
+    border-color: white;
+    color: white;
+}
+
+#cardset {
+    margin-bottom: 25px;
+}
+
+/* page recette :id */
+.custom-carousel-control-prev {
+    color: black;
+}
+
+.custom-carousel-control-next {
+    color: black;
+}
+
+.custom-right-column {
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+}
+
+.custom-content-padding {
+    padding-left: 40px;
+    padding-right: 80px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.custom-title {
+    font-weight: 600;
+}
+
+.custom-footer {
+    background-color: #264653;
+}
+
 
 /* page connexion */
+.custom-bg-color {
+    background-color: #eee;
+}
+
 .gradient-custom-2 {
     background: #0c081b;
     background: -webkit-linear-gradient(to right, #264653, #2A9D8F);
@@ -114,30 +200,22 @@
     border-color: white;
 }
 
+.logo {
+    width: 185px;
+}
 
-/* page administration */
-    /* HEADER */
-        #btn_addnew {
-            background: linear-gradient(to right, #264653, #2A9D8F);
-            color: white;
-        }
+.logo-inverted {
+    width: 185px;
+    filter: invert(100%);
+}
 
-        #btn_deco {
-            color: #d32c20;
-        }
+.text-danger {
+    color: red;
+}
 
-        #btn_deco:hover {
-            background: linear-gradient(to right,#B13026,#84181C);
-            color: white;
-            border-color: white;
-        }
-
-    /* RECETTES ACTIVE */
-        #btn_modif {
-            background-color: #264653;
-            color: white;
-            border-color: white;
-        }
+.customtxtsize {
+    font-size: 20px;
+}
 
 /* FOOTER */
 #footer_menu {
@@ -145,9 +223,19 @@
     justify-content: center;
 }
 
-/* EDIT RECETTE */
-.fixed-image {
-    height: 100px; 
-    object-fit: cover; 
+#bgFooter {
+    background-color: #264653;
+}
+
+#footer_menu {
+    margin-bottom: 1.5rem;
+}
+
+.nav-link {
+    color: #fff; 
+}
+
+.footer-social-icons img {
+    width: 40px; 
 }
 

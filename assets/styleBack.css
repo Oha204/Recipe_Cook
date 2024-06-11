@@ -1,0 +1,101 @@
+/* Backoffice */
+/* HEADER */
+.custom-header {
+    padding-left: 80px;
+    padding-right: 0px;
+}
+
+#btn_addnew {
+    background: linear-gradient(to right, #264653, #2A9D8F);
+    color: white;
+}
+
+#btn_deco {
+    color: #d32c20;
+}
+
+#btn_deco:hover {
+    background: linear-gradient(to right, #B13026, #84181C);
+    color: white;
+    border-color: white;
+}
+
+.custHeaderBack {
+    padding-left: 80px; 
+    padding-right: 0px; 
+    background-color:white;
+}
+
+.custImgBackAdd img {
+    width: 150px;
+}
+
+/* Header Edit Recipe */
+#btn_voir_plus {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: #264653;
+    border-color: #264653;
+    color: white;
+}
+
+#btn_voir_plus:hover {
+    background-color: white;
+    color: #264653;
+}
+
+/* Active recette - homepage Backoffice */
+.recipe-title {
+    font-weight: 600;
+}
+
+.recipe-icon {
+    width: 35px;
+}
+
+.recipe-details, .recipe-link {
+    font-size: 14px;
+}
+
+.btn-icon {
+    width: 14px;
+    margin-right: 7px;
+}
+
+#btn_modif {
+    font-size: 14px;
+}
+
+.page-link {
+    color: #264653;
+}
+
+.recipe-category {
+    font-size: 18px;
+}
+
+#btn_modif {
+    background-color: #264653;
+    color: white;
+    border-color: white;
+}
+
+/* Add recette - Backoffice */
+.form-label {
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    font-size: 15px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem; 
+}
+
+/* EDIT RECETTE */
+.fixed-image {
+    height: 100px; 
+    object-fit: cover; 
+}
