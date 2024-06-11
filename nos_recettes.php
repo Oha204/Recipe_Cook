@@ -85,7 +85,7 @@ $end = min($end, $totalRecipes - 1); //assure que la valeur de $end n'est pas su
 
                     <div class="card-body d-flex flex-column text-center h-100"> 
                         <div>
-                            <h2 class="card-title"><?php echo $recette['title'];?></h2>
+                            <h3 class="card-title"><?php echo $recette['title'];?></h3>
 
                             <div class="d-flex justify-content-center align-items-center mb-2">    
                                 <div class="cat">

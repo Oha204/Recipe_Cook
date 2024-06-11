@@ -18,7 +18,7 @@
             
             <div class="mt-4">
                 <h2>Nous vous confirmons votre inscription à notre newsletter <?php echo $_GET["email"]?> !</h2>
-                <a href="index_obj.php" class="btn btn-outline-dark mt-5" id="btn_co" type="button">Retour à l'accueil</a>
+                <a href="index.php" class="btn btn-outline-dark mt-5" id="btn_co" type="button">Retour à l'accueil</a>
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) { // Si Formulaire soumi
 
             <!-- Gauche : Connexion -->
                     <div class="text-center">
-                        <img src="/assets/logo.png" style="width: 185px;" alt="logo">
+                        <img src="/Recipe_Cook/assets/logo.png" style="width: 185px;" alt="logo">
                         <h4 class="mt-3 mb-3 pb-1">Connectez-vous à votre compte</h4>
                         
                         <div class="mb-4" style="color:red;">
@@ -64,7 +64,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) { // Si Formulaire soumi
                 <div class="col-lg-6 d-flex align-items-center justify-content-center  gradient-custom-2">
                 <div class="text-white pt-5">    
                     <div class="text-center">
-                        <img src="/assets/logo.png" style="width: 185px; filter: invert(100%);" alt="logo">
+                        <img src="/Recipe_Cook/assets/logo.png" style="width: 185px; filter: invert(100%);" alt="logo">
                         <h4 class="mt-3">Vous n'avez pas de compte ?</h4>
                         <p class="mb-4" style="font-size: 20px;"> Créez-vous en un </p>
                     </div>

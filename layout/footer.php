@@ -35,15 +35,15 @@
             <form>
                 <h5 class="mb-3 text-white">Suivez-nous sur les réseaux !</h5>
                     <div class="d-flex flex-row  gap-2">
-                        <a href="#"><img src="../assets/icons/facebook.png" alt="Facebook" style="width: 40px;"></a>
-                        <a href="#"><img src="../assets/icons/instagram.png" alt="Instagram" style="width: 40px;"></a>
-                        <a href="#"><img src="../assets/icons/linkedin.png" alt="Linkedin" style="width: 40px;"></a>
+                        <a href="#"><img src="../Recipe_Cook/assets/icons/facebook.png" alt="Facebook" style="width: 40px;"></a>
+                        <a href="#"><img src="../Recipe_Cook/assets/icons/instagram.png" alt="Instagram" style="width: 40px;"></a>
+                        <a href="#"><img src="../Recipe_Cook/assets/icons/linkedin.png" alt="Linkedin" style="width: 40px;"></a>
                     </div>
             </form>
         </div>
     </div>
 
     <div class="d-flex flex-column flex-sm-row justify-content-center mb-0 border-top">
-        <p class="mt-3 text-white">© 2022 Company, Inc. All rights reserved.</p>
+        <p class="mt-3 text-white">© 2023 Camille Janin</p>
     </div>
 </footer>

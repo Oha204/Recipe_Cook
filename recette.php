@@ -60,7 +60,7 @@ if ($recette === false) {
                     <div>
                         <div class="px-5 pb-3">
                             <p class="text-center">Auteur : <?php echo $recette['author'];?></p>
-                            <h2 class="text-center" style="font-weight: 600;"><?php echo $recette['title'];?></h2>
+                            <h3 class="text-center" style="font-weight: 600;"><?php echo $recette['title'];?></h3>
                         </div>
                         
                         <div class="row">
@@ -103,7 +103,7 @@ if ($recette === false) {
                 </div>
 
                 <div class="d-flex flex-column flex-sm-row justify-content-center" style="background-color: #264653;">
-                    <p class="mt-3 text-white">© 2022 Company, Inc. All rights reserved.</p>
+                    <p class="mt-3 text-white">© 2023 Camille Janin</p>
                 </div>
             </div>    
         </div> 

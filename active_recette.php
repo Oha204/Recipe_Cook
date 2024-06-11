@@ -88,7 +88,7 @@ $end = min($end, $totalRecipes - 1);
                         <div class="col-md-12 px-4">
                             <div class="d-flex justify-content-between mt-3">
                                 <div>
-                                    <h2 style="font-weight: 600;"><?php echo $recette['title'];?></h2>
+                                    <h3 style="font-weight: 600;"><?php echo $recette['title'];?></h3>
 
                                     <div class="d-flex" style="font-size: 18px;">
                                         <div class="cat">

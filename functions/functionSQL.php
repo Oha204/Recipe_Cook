@@ -46,7 +46,7 @@ function addUsers () {
             $mail,
             $password
         ]);
-        Utils::redirect('../confirm_registration.php?email=' . $_POST['mail']); // Evolution : mettre le lien pour le côté client
+        Utils::redirect('../Recipe_Cook/confirm_registration.php?email=' . $_POST['mail']); // Evolution : mettre le lien pour le côté client
 }
 
 //Fonction permettant de récupérer les recettes dans notre BDD
