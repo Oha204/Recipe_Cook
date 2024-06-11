@@ -92,12 +92,13 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
                             </div>
                         </div>
 
-                        <div class="d-flex flex-row align-items-center mb-4">
+                        <div class="d-flex flex-row align-items-center">
                             <div class="form-outline flex-fill mb-0">
                                 <label class="form-label" for="paswword">Mot de passe*</label>
-                                <input type="password" name="password" class="form-control" required />             
+                                <input type="password" name="password" class="form-control" required />  
                             </div>
                         </div>
+                        <p class="detailpassword  mb-4">Votre mot de passe doit contenir 8 caractères minimum.</p>
 
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
