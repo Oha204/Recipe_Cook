@@ -25,18 +25,16 @@ $recettes = getRecipesCook();
 ?>
 
 <!-- Background image -->
-<div class="text-center bg-image d-flex justify-content-center align-items-center" style="background-image: url('uploads/img/home_img.png'); height: 73vh;">
-        <div class="text-white">
-            <h1 class="mb-3">Coté recette est là pour vous !</h1>
-            <h4 class="mb-5">Découvrez comment préparer de bons petits plats pas-à-pas grâce à de nombreuses recettes.<br />Plats chauds, desserts, apéros, cocktails, vous y trouverez votre bonheur !</h4>
-            <a class="btn btn-outline-light btn-lg" href="nos_recettes.php" role="button">C'est par ici</a>
-        </div>
+<div class="text-center d-flex justify-content-center align-items-center" style="background-image: url('uploads/img/home_img.png'); height: 80vh;">
+    <div class="text-white">
+        <h1 class="mb-3">Coté recette est là pour vous !</h1>
+        <h4 class="mb-5">Découvrez comment préparer de bons petits plats pas-à-pas grâce à de nombreuses recettes.<br />Plats chauds, desserts, apéros, cocktails, vous y trouverez votre bonheur !</h4>
+        <a class="btn btn-outline-light btn-lg" href="nos_recettes.php" role="button">C'est par ici</a>
+    </div>
 </div>
-<!-- Background image -->
-
 
 <!-- Block 1 : the news -->
-<h2 class="text-center mb-5 mt-5">Les dernières nouveautés</h2>
+<h2 class="titleh2 text-center">Les dernières nouveautés</h2>
     <div class="container">
         <div class="row justify-content-center">
             <?php 

@@ -3,15 +3,24 @@ require_once 'layout/header.php';
 require_once 'classes/ErrorMess.php';
 require_once 'classes/Utils.php';
 
+$error_message = null;
+
 // Add News User
-if (isset($_POST['mail']) && isset($_POST['password'])) { // Si Formulaire soumis
+if (isset($_POST['mail']) && isset($_POST['password'])) {
     require_once 'functions/functionSQL.php';
-    
-    try {
-        $newuser = addUsers();
-    } catch (PDOException) {
-        echo "Erreur lors de la requête";
-        exit;
+
+    $mail = $_POST['mail'];
+    $password = $_POST['password'];
+
+    // Validation des données
+    $error_message = validateUserData($mail, $password);
+
+    if (!$error_message) {
+        try {
+            addUsers($mail, $password);
+        } catch (PDOException) {
+            $error_message = "Erreur lors de la requête";
+        }
     }
 }
 ?>
@@ -69,32 +78,38 @@ if (isset($_POST['mail']) && isset($_POST['password'])) { // Si Formulaire soumi
                         <p class="mb-4" style="font-size: 20px;"> Créez-vous en un </p>
                     </div>
 
-                        <form method="POST" action=""> 
-                            <div class="d-flex flex-row align-items-center mb-4">
-                                <div class="form-outline flex-fill mb-0">
-                                    <label class="form-label" for="mail">Email*</label>
-                                    <input name="mail" type="mail" class="form-control" required />
-                                </div>
-                            </div>
+                    <?php if ($error_message) { ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $error_message; ?>
+                        </div>
+                    <?php } ?>
 
-                            <div class="d-flex flex-row align-items-center mb-4">
-                                <div class="form-outline flex-fill mb-0">
-                                    <label class="form-label" for="paswword">Mot de passe*</label>
-                                    <input type="password" name="password" class="form-control" required />             
-                                </div>
+                    <form method="POST" action=""> 
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="mail">Email*</label>
+                                <input name="mail" type="mail" class="form-control" required />
                             </div>
+                        </div>
 
-                            <div class="d-flex flex-row align-items-center mb-4">
-                                <div class="form-outline flex-fill mb-0">
-                                    <label class="form-label" for="paswwordok">Confirmez votre mot de passe*</label>
-                                    <input type="password" name="password_verif" class="form-control" required  />
-                                </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="paswword">Mot de passe*</label>
+                                <input type="password" name="password" class="form-control" required />             
                             </div>
+                        </div>
 
-                            <div class="text-center pt-1 mb-5 pb-1">
-                                <button type="submit" class="btn btn-outline-light btn-lg " role="button">S'inscrire</button>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="form-label" for="paswwordok">Confirmez votre mot de passe*</label>
+                                <input type="password" name="password_verif" class="form-control" required  />
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1">
+                            <button type="submit" class="btn btn-outline-light btn-lg " role="button">S'inscrire</button>
+                        </div>
+                    </form>
                 </div>
                 </div>
             </div>

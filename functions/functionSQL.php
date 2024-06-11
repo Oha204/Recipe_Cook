@@ -32,21 +32,27 @@ function getDbConnection(): PDO {
     return $pdo;
 }
 
-// Inscription nouveaux users BDD 
-function addUsers () {
-    $pdo = getDbConnection(); // Récupération d'une instance de PDO
-    // Récupération des données de formulaire
-    $mail = $_POST['mail'];
-    $password = $_POST['password'];
-    // Validation des données
-        // 1 - Je prépare ma requête 
-        $addusers = $pdo->prepare("INSERT INTO users (mail, passwordHash) VALUES (?, ?)");
-        // 2 - J'exécute ma requête en fournissant une valeur au(x) paramètre(s)
-        $addusers->execute([
-            $mail,
-            $password
-        ]);
-        Utils::redirect('../Recipe_Cook/confirm_registration.php?email=' . $_POST['mail']); // Evolution : mettre le lien pour le côté client
+// Inscription nouveaux users 
+function addUsers($mail, $password) {
+    $pdo = getDbConnection(); 
+
+    $addusers = $pdo->prepare("INSERT INTO users (mail, passwordHash) VALUES (?, ?)");
+    $addusers->execute([
+        $mail,
+        password_hash($password, PASSWORD_BCRYPT)
+    ]);
+    Utils::redirect('../Recipe_Cook/confirm_registration.php?email=' . $mail); // Evolution : mettre le lien pour le côté client
+}
+
+// Validation des données form inscription
+function validateUserData($mail, $password) {
+    if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        return "Le format de l'email est invalide.";
+    }
+    if (strlen($password) < 8) {
+        return "Le mot de passe doit comporter au moins 8 caractères.";
+    }
+    return null;
 }
 
 //Fonction permettant de récupérer les recettes dans notre BDD
