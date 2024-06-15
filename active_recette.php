@@ -1,16 +1,11 @@
 <?php
-//require_once 'functions/pagination.php'; 
-//require_once 'classes/Recette.php';
-//require_once 'data/recettes.php';
 require_once 'layout/headerback.php';
 require_once 'classes/Utils.php';
 require_once 'classes/ErrorMess.php';
 require_once 'functions/functionSQL.php';
 require_once 'functions/deleteRecipe.php';
 
-//CONNEXION & OUVERTURE SESSION 
-
-
+//CONNEXION 
 if (!isset($_SESSION['email'])) {
     $error_message = urlencode(ErrorMess::ADMIN_ACCESS_ERROR);
     $redirect_url = 'index_connexion.php?error=' . $error_message;

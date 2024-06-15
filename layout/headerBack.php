@@ -20,51 +20,64 @@ if (isset($_SESSION['email'])) {
 </head>
 
 <body>
-    <div class="container-fluid">
+<div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 bg-header">
                 <div class="dashboard">
                     <div class="dashboard-nav">
-                        <div href="index.php" class="image-white-filter text-center pb-4">
-                            <img width="150px" src="/Recipe_Cook/assets/logo.png" alt="">
+                        <div class="image-menu-container">
+                            <div class="image-white-filter text-center pb-4">
+                                <img width="150px" src="/Recipe_Cook/assets/logo.png" alt="">
+                            </div>
+                            <button class="navbar-toggler" type="button" onclick="toggleMenu()">
+                                ☰
+                            </button>
                         </div>
 
-                        <div class="iconprofilbloc pt-1 pb-3">
-                            <div class="profile-picture">
-                                <img src="/Recipe_Cook/assets/icons/profil.png" width="45px;" class="image-white-filter" alt="icon profil">
+                        <div class="navbar-collapse" id="navbarSupportedContent">
+                            <div class="iconprofilbloc pt-1 pb-3">
+                                <div class="profile-picture">
+                                    <img src="/Recipe_Cook/assets/icons/profil.png" width="45px;" class="image-white-filter" alt="icon profil">
+                                </div>
+                                <div class="text-white m-0">
+                                    <p class="txt-cust-hello">Bonjour</p>
+                                    <p><?php echo $welcomeMessage; ?> !</p>
+                                </div>
                             </div>
-                            <div class="text-white m-0">
-                                <p class="txt-cust-hello">Bonjour</p>
-                                <p><?php echo $welcomeMessage; ?> !</p>
-                            </div>
+                            
+                            <div class="lineCust mt-3"></div>
+
+                            <nav class="pt-3">
+                                <div class="d-flex flex-column">
+                                    <a href="../Recipe_Cook/active_recette.php" class="dashboard-nav-item">
+                                        <img src="/Recipe_Cook/assets/icons/liste.png" class="image-white-filter" alt="Icône de liste"> 
+                                        Liste Recettes 
+                                    </a>
+                                    <a href="addrecette.php" class="dashboard-nav-item">
+                                        <img src="/Recipe_Cook/assets/icons/add.png" class="image-white-filter" alt="Icône add recipe">
+                                        Add new
+                                    </a>
+                                </div>
+
+                                <div class="nav-item-divider"></div>
+
+                                <div class="d-flex flex-column btn-container gap-2">
+                                    <a href="../Recipe_Cook/index.php" class="btn " id="btn_deco" type="button">Retour Site</a>
+                                    <a href="logout.php" class="btn " id="btn_deco" type="button">Se déconnecter</a>
+                                </div>
+                            </nav>
                         </div>
-                        
-                        <div class="lineCust mt-3"></div>
-
-                        <nav class="pt-3">
-                            <div class="d-flex flex-column">
-                                <a href="../Recipe_Cook/active_recette.php" class="dashboard-nav-item">
-                                    <img src="/Recipe_Cook/assets/icons/liste.png" class="image-white-filter" alt="Icône de liste"> 
-                                    Liste Recettes 
-                                </a>
-                                <a href="addrecette.php" class="dashboard-nav-item">
-                                    <img src="/Recipe_Cook/assets/icons/add.png" class="image-white-filter" alt="Icône add recipe">
-                                    Add new
-                                </a>
-                            </div>
-
-                            <div class="nav-item-divider"></div>
-
-                            <div class="d-flex flex-column btn-container gap-2">
-                                <a href="../Recipe_Cook/index.php" class="btn " id="btn_deco" type="button">Retour Site</a>
-                                <a href="logout.php" class="btn " id="btn_deco" type="button">Se déconnecter</a>
-                            </div>
-                        </nav>
                     </div>
                 </div>
             </div>
 
-
+<script>
+    // menuToggle.js
+function toggleMenu() {
+    const navbar = document.getElementById('navbarSupportedContent');
+    navbar.classList.toggle('show');
+}
+</script>
 
 <!-- <div class='dashboard-nav-dropdown'>
     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i> User </a>
