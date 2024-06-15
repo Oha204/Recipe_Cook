@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['toggle_desact'])) {
         </nav>
     </div>
 
-     <!-- Liste recettes désactivées -->
+    <!-- Liste recettes désactivées -->
     <div class="container">
         <div class="row">
             <?php if (empty($recettes)) { ?>
