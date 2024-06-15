@@ -1,17 +1,10 @@
 # PROJET 
 Site de recettes de cuisine, avec présence d'un backoffice pour ajouter, supprimer ou modifier des recettes.
 
-<img src="../Recipe_Cook/assets/imgReadMe/home.png" width="128"/>
-<img src="../Recipe_Cook/assets/imgReadMe/listeRecette.png" width="128"/>
-<img src="../Recipe_Cook/assets/imgReadMe/LoginForm.png" width="128"/>
-<img src="../Recipe_Cook/assets/imgReadMe/Backoffice.png" width="128"/>
-
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="../Recipe_Cook/assets/imgReadMe/home.png">
- <source media="(prefers-color-scheme: light)" srcset="../Recipe_Cook/assets/imgReadMe/home.png">
- <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
-</picture>
-
+<img src="/assets/imgReadMe/home.png" width="128"/>
+<img src="/assets/imgReadMe/listeRecette.png" width="128"/>
+<img src="/assets/imgReadMe/LoginForm.png" width="128"/>
+<img src="/assets/imgReadMe/Backoffice.png" width="128"/>
 
 ## Stacks Techniques : 
 HTML / CSS / PHP / JAVASCRIPT / BOOSTRAP - 
