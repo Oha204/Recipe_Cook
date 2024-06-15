@@ -29,7 +29,7 @@ if (isset($_POST['title']) &&
         }
     }
 ?>
-<div class="col-md-9">
+<div class="col-lg-9">
     <div><h2 class="d-flex justify-content-center align-items-center pb-2 mb-5 mt-5">Ajouter une nouvelle recette</h2></div>
 
     <div class="container mt-4">

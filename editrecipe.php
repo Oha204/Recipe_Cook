@@ -44,7 +44,7 @@ $id = $_GET['id'] ?? null;
     }
 }
 ?>
-<div class="col-md-9">
+<div class="col-lg-9">
     <h2 class="d-flex justify-content-center align-items-center pb-2 mb-5 mt-5 text-center">Modifier votre recette :<br/><?php echo $recette['title'] ?></h2>
 
     <div class="container mt-5">

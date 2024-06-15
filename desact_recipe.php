@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['toggle_desact'])) {
     }
 }
 ?>
-<div class="col-md-9">
+<div class="col-lg-9">
     <!-- Menu -->
     <div class="container d-flex flex-column justify-content-center align-items-center mt-4">
         <nav>
