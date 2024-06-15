@@ -16,6 +16,7 @@ if (isset($_SESSION['email'])) {
     <link rel="stylesheet" href="/Recipe_Cook/assets/styleBack.css">
 
     <script src="/Recipe_Cook/javascript/redirectTo.js"></script>
+    <script src="/Recipe_Cook/javascript/toggleMenu.js"></script>
     <title>BackOffice - Coté recette</title>
 </head>
 
@@ -70,14 +71,6 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
             </div>
-
-<script>
-    // menuToggle.js
-function toggleMenu() {
-    const navbar = document.getElementById('navbarSupportedContent');
-    navbar.classList.toggle('show');
-}
-</script>
 
 <!-- <div class='dashboard-nav-dropdown'>
     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i> User </a>

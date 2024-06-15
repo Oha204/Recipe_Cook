@@ -11,7 +11,7 @@ Connectez-vous en tant qu'administrateur au BO du site afin d'ajouter, modifier 
 
 ## Création BDD :
 - Table "categories" :
-CREATE TABLE IF NOT EXISTS `categories` (
+CREATE TABLE `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name_cat` enum('Entrée','Plat chaud','Plat froid','Dessert') DEFAULT NULL,
   `img_icon_cat` varchar(45) DEFAULT NULL,
