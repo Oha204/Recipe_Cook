@@ -6,6 +6,13 @@ Site de recettes de cuisine, avec présence d'un backoffice pour ajouter, suppri
 <img src="../Recipe_Cook/assets/imgReadMe/LoginForm.png" width="128"/>
 <img src="../Recipe_Cook/assets/imgReadMe/Backoffice.png" width="128"/>
 
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="../Recipe_Cook/assets/imgReadMe/home.png">
+ <source media="(prefers-color-scheme: light)" srcset="../Recipe_Cook/assets/imgReadMe/home.png">
+ <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
+</picture>
+
+
 ## Stacks Techniques : 
 HTML / CSS / PHP / JAVASCRIPT / BOOSTRAP - 
 SQL / MYSQL / PHPMYADMIN
