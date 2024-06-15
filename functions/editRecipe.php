@@ -36,3 +36,4 @@ function editRecipes(int $recipeId) : void {
         
     ]);
 }
+?>

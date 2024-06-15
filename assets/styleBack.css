@@ -1,33 +1,102 @@
 /* Backoffice */
+/* Génrale page */
+
 /* HEADER */
-.custom-header {
-    padding-left: 80px;
-    padding-right: 0px;
+.bg-header {
+    background-color: #264653;
+    min-height: 100vh;
 }
 
-#btn_addnew {
-    background: linear-gradient(to right, #264653, #2A9D8F);
-    color: white;
+.dashboard {
+    position: fixed;
+    padding: 15px 20px;
+    z-index: 1000;
+    height: 100%;
+}
+
+@media (max-width: 992px) {
+    .dashboard {
+        position: relative; 
+        height: auto;
+        overflow-y: visible;
+    }
+}
+
+.dashboard-nav {
+    padding: 30px;
+}
+
+@media (min-width: 992px) and (max-width: 1150px) {
+    .dashboard-nav {
+        padding-left: 0px;
+    }
+}
+
+.dashboard-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: background 0.3s;
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav .active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.iconprofilbloc {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    margin-right: 20px;
+}
+
+.text-white p {
+    margin: 0;
+}
+
+.txt-cust-hello {
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.lineCust {
+    opacity: 50%;
+    height: 1px;
+    background-color: rgba(236, 238, 239, 0.3);
+}
+
+.dashboard-nav-item img {
+    width: 17px;
+}
+
+.image-white-filter {
+    filter: invert(1);
+}
+
+.nav-item-divider {
+    height: 1px;
+    background-color: rgba(236, 238, 239, 0.3);
+    margin: 1rem 0;
 }
 
 #btn_deco {
-    color: #d32c20;
-}
-
-#btn_deco:hover {
-    background: linear-gradient(to right, #B13026, #84181C);
-    color: white;
+    color: #ffffff;
+    padding: 8px 18px;
     border-color: white;
 }
 
-.custHeaderBack {
-    padding-left: 80px; 
-    padding-right: 0px; 
-    background-color:white;
+#btn_deco:hover {
+    background: white;
+    color: #264653;
+    border-color: white;
 }
 
-.custImgBackAdd img {
-    width: 150px;
+.btn-container {
+    margin-top: 25px;
 }
 
 /* Header Edit Recipe */
@@ -92,6 +161,11 @@
 
 .form-group {
     margin-bottom: 1.5rem; 
+}
+
+#btn_addnew {
+    background: linear-gradient(to right, #264653, #2A9D8F);
+    color: white;
 }
 
 /* EDIT RECETTE */

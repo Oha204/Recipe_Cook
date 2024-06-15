@@ -14,7 +14,7 @@ if (empty($_POST['email']) || empty($_POST['password'])) {
 ] = $_POST;
 
 // Authentification
-if ($email === "camille@gmail.com" && $password === "123456") {
+if ($email === "admin@gmail.com" && $password === "123456") {
     $_SESSION['email'] = $email;
     Utils::redirect('active_recette.php');
 } else {
