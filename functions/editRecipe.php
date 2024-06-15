@@ -32,8 +32,6 @@ function editRecipes(int $recipeId) : void {
         $steps,
         $categories_id,
         $recipeId
-        
-        
     ]);
 }
 ?>

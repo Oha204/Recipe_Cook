@@ -17,7 +17,7 @@ if (!isset($_SESSION['email'])) {
 
 // CO BDD + récup recettes
 try {
-    $recettes = getRecipesCook();
+    $recettes = getActiveRecipes();
 } catch (PDOException) {
     echo "Erreur lors de la récupération des recettes";
     exit;
@@ -57,6 +57,22 @@ $currentpage = isset($_GET['page']) ? $_GET['page'] : 1;
 $start = ($currentpage - 1) * $recipesPerPage; 
 $end = $start + $recipesPerPage - 1; 
 $end = min($end, $totalRecipes - 1); 
+
+// Changer valeur active
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['toggle_active'])) {
+    $toggle_id = isset($_POST['toggle_active_id']) ? intval($_POST['toggle_active_id']) : null;
+
+    if ($toggle_id !== null) {
+        try {
+            toggleRecipeActive($toggle_id);
+            echo    '<script type="text/javascript">',
+                    'redirectTo("active_recette.php");',
+                    '</script>';
+        } catch (PDOException $e) {
+            echo "Erreur lors de la mise à jour de la recette : " . $e->getMessage();
+        }
+    }
+}
 ?>
 <div class="col-md-9">
     <!-- Menu -->
@@ -105,8 +121,14 @@ $end = min($end, $totalRecipes - 1);
                                             
                                             <button type="submit" class="btn btn-danger pt-0 px-2" name="id" value=<?php echo $recette['id']; ?>><img src="assets/icons/trash.png" class="card-img-top btn-icon" alt=""></button>
 
-                                            <button type="button" class="btn btn-light pt-0 px-2"><img src="assets/icons/view.png" class="card-img-top btn-icon" alt=""></button>
-                                            <!-- évolution : activation/désactivation recette. (Si active = 1 alors afficher cette image, sinon afficher l'oeil barré) -->
+                                            <!-- <button type="submit" class="btn btn-light pt-0 px-2" name="deactivate_id" value="<?php echo $recette['id']; ?>"><img src="assets/icons/view.png" class="card-img-top btn-icon" alt=""></button> -->
+
+                                        </form>
+                                        <form method="POST" action="">
+                                            <input type="hidden" name="toggle_active_id" value="<?php echo $recette['id']; ?>">
+                                            <button type="submit" class="btn btn-light pt-0 px-2" name="toggle_active" value="1">
+                                                <img src="assets/icons/view.png" class="card-img-top btn-icon" alt="">
+                                            </button>
                                         </form>
                                     </div>
                                 </div>  

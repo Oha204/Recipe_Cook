@@ -173,3 +173,9 @@
     height: 100px; 
     object-fit: cover; 
 }
+
+/* Recette desactivé  */
+
+.custMess {
+    font-size: 17px;
+}

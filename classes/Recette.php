@@ -13,7 +13,8 @@ class Recette
         private array  $categories,
         private array  $ingredients,
         private array  $ustensiles,
-        private array  $preparation
+        private array  $preparation,
+        private bool   $active
     ) {
     }
 
@@ -60,5 +61,10 @@ class Recette
     public function getDatepubli() : string
     {
         return $this->date_publi;
+    }
+
+    public function getActive() : bool
+    {
+        return $this->active;
     }
 }

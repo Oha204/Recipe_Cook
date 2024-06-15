@@ -59,9 +59,44 @@ function validateUserData($mail, $password) {
 function getRecipesCook() : array {
     $pdo = getDbConnection();
     $stmt = $pdo->query(
-        "SELECT recettes.id, recettes.publication_date, recettes.img_principale, recettes.title, recettes.categories_id, categories.name_cat, categories.img_icon_cat
+        "SELECT recettes.id, recettes.publication_date, recettes.img_principale, recettes.title, recettes.author, recettes.categories_id, categories.name_cat, categories.img_icon_cat, recettes.active
         FROM recettes 
         INNER JOIN categories ON recettes.categories_id = categories.id
+        ORDER BY recettes.publication_date DESC");
+    
+    $recettes = $stmt->fetchAll();
+    return $recettes;
+}
+
+// Fonction pour inverser la valeur 'active' dans la base de données
+function toggleRecipeActive($recipe_id) {
+    $pdo = getDbConnection();
+    $stmt = $pdo->prepare("UPDATE recettes SET active = NOT active WHERE id = ?");
+    $stmt->execute([$recipe_id]);
+}
+
+//récupérer recettes actives
+function getActiveRecipes() : array {
+    $pdo = getDbConnection();
+    $stmt = $pdo->query(
+        "SELECT recettes.id, recettes.publication_date, recettes.img_principale, recettes.title, recettes.author, recettes.categories_id, categories.name_cat, categories.img_icon_cat, recettes.active
+        FROM recettes 
+        INNER JOIN categories ON recettes.categories_id = categories.id
+        WHERE recettes.active = 1
+        ORDER BY recettes.publication_date DESC");
+    
+    $recettes = $stmt->fetchAll();
+    return $recettes;
+}
+
+//récupérer recettes desactivé
+function getDesactivRecipes() : array {
+    $pdo = getDbConnection();
+    $stmt = $pdo->query(
+        "SELECT recettes.id, recettes.publication_date, recettes.img_principale, recettes.title, recettes.author, recettes.categories_id, categories.name_cat, categories.img_icon_cat, recettes.active
+        FROM recettes 
+        INNER JOIN categories ON recettes.categories_id = categories.id
+        WHERE recettes.active = 0
         ORDER BY recettes.publication_date DESC");
     
     $recettes = $stmt->fetchAll();

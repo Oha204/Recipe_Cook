@@ -47,7 +47,8 @@ $recipesObjects = [
         'étape 5' => 'Versez les lentilles corail, ajoutez le chou-fleur et versez 20cl d\'eau par portion. Salez et poivrez.',
         'étape 6' => 'Ajoutez le lait de coco. Mélangez et laissez cuire à couvert sur feu moyen pendant 25 minutes en remuant de temps en temps.',
         'étape 7' => 'Servez avec le riz, ajoutez quelques feuilles de persil si vous le souhaitez et ré-assaisonnez selon vos goûts, c\'est prêt !  '
-        ]
+        ],
+        1
     ),
 
 
@@ -76,7 +77,8 @@ $recipesObjects = [
             'étape 5' => 'Sur une plaque recouverte de papier cuisson, ajoutez le saumon mariné, l\'oignon et les poivrons. Assaisonnez avec la marinade restante, du sel et du poivre. Enfournez 15 à 20 minutes à 220°C. Pour un saumon croustillant, mettez le four en mode grill pendant 2 minutes en fin de cuisson.', 
             'étape 6' => 'Pendant ce temps, faites cuire le riz selon les instructions du paquet. En fin de cuisson, égouttez-le.' , 
             'étape 7' => 'Sortez le plat du four et servez le saumon avec les légumes grillés et le riz. Arrosez le saumon de jus de citron. C\'est prêt !'
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -103,7 +105,8 @@ $recipesObjects = [
             'étape 5' => 'Éteignez le feu, ajoutez le pesto dans la poêle et mélangez.', 
             'étape 6' => 'Pendant ce temps, faites cuire le riz selon les instructions du paquet. En fin de cuisson, égouttez-le.' , 
             'étape 7' => 'Coupez le bœuf en lamelles et servez-le avec les légumes au pesto. C\'est prêt !'
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -133,7 +136,8 @@ $recipesObjects = [
             'étape 6' => 'Versez l\'appareil à cheesecake sur le biscuit et ré-enfournez pendant 15 minutes à 200°C. Au bout des 15 minutes, baissez à 100°C et poursuivez la cuisson pendant 1 heure environ.' , 
             'étape 7' => 'En fin de cuisson, éteignez le four et laissez le cheesecake refroidir dans le four. Réservez ensuite au frais au moins 2 heures ou jusqu’au service.',
             'étape 8' => 'Démoulez le cheesecake et décorez-le avec les framboises. C\'est prêt !'
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -162,7 +166,8 @@ $recipesObjects = [
             'étape 6' => 'Une fois la cuisson terminée, ajoutez la ricotta, salez, poivrez, mélangez.' , 
             'étape 7' => 'Ajoutez le tout dans un plat allant au four, saupoudrez de parmesan et enfournez pendant 10 à 15 minutes. Le dessus doit être doré.',
             'étape 8' => '(Optionnel : ajoutez un peu de zeste de citron jaune au moment de servir). C\'est prêt !'
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -188,7 +193,8 @@ $recipesObjects = [
             'étape 6' => 'Pendant ce temps, rincez puis égouttez les pois chiches et mélangez-les avec le reste de l\'huile au curcuma, sel, poivre.' , 
             'étape 7' => 'Au bout de 15 minutes de cuisson des aubergines, ajoutez les pois chiches sur la plaque de cuisson et ré-enfournez jusqu\'à la fin de la cuisson des aubergines.',
             'étape 8' => 'Une fois les légumes cuits, servez les aubergines avec le yaourt, les pois chiches, quelques feuilles de coriandre, sel, poivre, c\'est prêt !'
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -216,7 +222,8 @@ $recipesObjects = [
             'étape 7' => 'Sortez du four et mettez les crèmes au frigo 1 heure minimum. ',
             'étape 8' => 'Avant de servir, parsemez le dessus des crèmes brûlées avec le sucre de canne (soit 1 cuillère à soupe par portion).',
             'étape 9' => 'Munissez vous d\'un chalumeau et faites caraméliser le sucre sur le dessus. Servez, c\'est prêt !'
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -244,7 +251,8 @@ $recipesObjects = [
             'étape 6' => 'Préchauffez le four à 180°C. Beurrez votre moule (ici, on utilise une poêle allant au four ça marche très bien aussi !). ' , 
             'étape 7' => 'Étalez la pâte à l\'aide de vos mains sur toute la surface du moule et déposez les carrés de chocolat mis de côté sur le dessus en les enfonçant légèrement. ',
             'étape 8' => 'Enfournez pour 35-40 minutes à 180°C. Le dessus du cookie doit être doré. Parsemez de fleur de sel avant de déguster, c\'est prêt ! '
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -276,7 +284,8 @@ $recipesObjects = [
             'étape 9' => 'Pendant ce temps faites cuire le riz dans une casserole d\'eau bouillante salée selon les indications du paquet soit environ 10 minutes.',
             'étape 10' => 'Après 10 minutes, l’eau doit être évaporée et les aubergines tendres. Piquez avec la pointe d’un couteau pour vérifier.',
             'étape 11' => 'Hors du feu ajoutez la ciboulette sur les aubergines si vous en avez, et égouttez le riz. Servez bien chaud, c\'est prêt ! '
-        ]
+        ],
+        1
     ),
 
     new Recette ( 
@@ -302,7 +311,8 @@ $recipesObjects = [
             'étape 4' => 'Sur une plaque recouverte de papier cuisson, ajoutez les patates douces, les courgettes et l\'oignon rouge. Arrosez d\'un bon filet d\'huile d\'olive. Salez, poivrez et ajoutez du thym. Mélangez le tout. Enfournez 15 minutes à 200°C.', 
             'étape 5' => 'Au bout des 15 minutes, ajoutez les galettes de légumes sur la plaque et enfournez de nouveau 15 minutes à 200°C. ', 
             'étape 6' => 'Dans une assiette, servez les légumes rôtis avec les galettes veggie. Ajoutez le tzatziki et quelques feuilles de persil si vous en avez. C\'est prêt !'
-        ]
+        ],
+        1
         ),
 
         new Recette ( 
@@ -332,7 +342,8 @@ $recipesObjects = [
                 'étape 8' => 'Repliez la feuille : repliez les bords vers l\'intérieur, enroulez délicatement la garniture (jusqu\'à la moitié de la feuille environ) puis finissez de rouler le tout, voilà !',
                 'étape 9' => 'Recommencez autant de fois que vous avez de feuilles',
                 'étape 10' => 'Servez les rouleaux de printemps avec de la sauce soja pour les tremper dedans ! C\'est prêt !'
-            ]
+            ],
+            1
         ),
 
         new Recette ( 
@@ -360,7 +371,8 @@ $recipesObjects = [
                 'étape 6' => 'Coupez les oignons en 2 puis en fines lamelles.',
                 'étape 7' => 'Dans un récipient ajoutez : le concombre, les oignons, le mélange cacahuète-cumin, le jus de citron, salez, poivrez, mélangez.',
                 'étape 8' => 'Servir avec la coriandre (optionnel : 1 une pincée de piment doux), c\'est prêt !'
-            ]
+            ],
+            1
         ),
 
         new Recette ( 
@@ -389,7 +401,8 @@ $recipesObjects = [
                 'étape 5' => 'Une fois la pâte pré-cuite, sortez-la du four et répartissez les courgettes et les tomates dans le fond.', 
                 'étape 6' => 'Versez l\'appareil à quiche par dessus les légumes. Répartissez la bûche de chèvre préalablement découpée en rondelles sur le dessus.',
                 'étape 7' => 'Parsemez d\'herbes de Provence, salez, poivrez et enfournez votre quiche pendant 45 minutes à 180°C. Laissez reposer 10 minutes avant de déguster, c\'est prêt ! À accompagner d\'une salade verte.'
-            ]
+            ],
+            1
         ),
 
         new Recette ( 
@@ -413,7 +426,8 @@ $recipesObjects = [
             [
                 'étape 1' => 'Dans un bol, mélangez la sauce soja avec de l\'huile d\'olive (1 cuillère à soupe d\'huile d\'olive pour 1 de soja), le gingembre râpé, le zeste et le jus de citron vert.', 
                 'étape 2' => 'Dans un saladier, ajoutez les pousses d\'épinard, la mangue, l\'avocat, le saumon fumé coupé en lamelles, puis ajoutez la sauce et les graines de sésame si vous en avez. Mélangez, dégustez !'
-            ]
+            ],
+            1
         ),
 
         new Recette ( 
@@ -455,6 +469,7 @@ $recipesObjects = [
                 'étape 17' => 'Recouvrez les quartiers de fraises d\'un autre tiers de chantilly (gardez-en pour le dessus du fraisier !). Enfin, déposez l\'autre biscuit par-dessus. ',
                 'étape 18' => 'Étalez le reste de la chantilly sur le biscuit. ',
                 'étape 19' => 'Décorez le dessus de votre fraisier avec le reste des fraises et quelques feuilles de basilic si vous en avez. C\'est prêt !',
-            ]
+            ],
+            1
         ),
 ];
