@@ -10,12 +10,53 @@
     width: 200px;
 }
 
-/* home page */
+/* HOME */
 .background-image-container {
     background-image: url('../uploads/img/home_img.png');
     background-size: cover;
     background-position: center;
     height: 80vh;
+}
+
+.logoInverted {
+    width: 300px;
+    filter: invert(100%);
+}
+
+.custAnim {
+    opacity: 0;
+    animation: fadeInFromLeft 1s ease forwards;
+}
+
+.custAnim2 {
+    animation: fadeInFromLeft2 1s ease forwards;
+}
+
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromLeft2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateX(0);
+    }
+}
+
+.btncust {
+    animation: fadeInFromLeft 1s ease forwards;
+    animation-delay: 0.2s;
 }
 
 .titleh2 {
@@ -57,6 +98,7 @@
 .hidden {
     display: none;
 }
+
 
 /* page liste recette */
 .custom-bg-image {

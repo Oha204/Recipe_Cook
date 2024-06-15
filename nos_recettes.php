@@ -16,7 +16,7 @@ try {
 <!-- Background image -->
 <div class="text-center bg-image d-flex justify-content-center align-items-center custom-bg-image">
     <div class="text-white">
-        <h1 class="mb-3 custom-heading">Toutes nos recettes !</h1>
+        <h1 class="custAnim2 mb-3 custom-heading">Toutes nos recettes !</h1>
     </div>
 </div>
 

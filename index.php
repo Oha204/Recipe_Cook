@@ -26,12 +26,13 @@ $recettes = getActiveRecipes();
 
 <!-- Background image -->
 <div class="background-image-container text-center d-flex justify-content-center align-items-center">
-    <div class="text-white">
-        <h1 class="mb-3">Coté recette est là pour vous !</h1>
+    <div class="text-white fade-in custAnim">
+        <img class="bi mb-4 logoInverted" src="/Recipe_Cook/assets/logo.png" alt="">
         <h4 class="mb-5">Découvrez comment préparer de bons petits plats pas-à-pas grâce à de nombreuses recettes.<br />Plats chauds, desserts, apéros, cocktails, vous y trouverez votre bonheur !</h4>
-        <a class="btn btn-outline-light btn-lg" href="nos_recettes.php" role="button">C'est par ici</a>
+        <a class="btn btncust btn-outline-light btn-lg" href="nos_recettes.php" role="button">C'est par ici</a>
     </div>
 </div>
+
 
 <!-- Block 1 : the news -->
 <h2 class="titleh2 text-center">Les dernières nouveautés</h2>

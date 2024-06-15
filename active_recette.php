@@ -12,8 +12,11 @@ require_once 'functions/deleteRecipe.php';
 
 
 if (!isset($_SESSION['email'])) {
-    Utils::redirect('index_connexion.php?error=' . ErrorMess::ADMIN_ACCESS_ERROR);
+    $error_message = urlencode(ErrorMess::ADMIN_ACCESS_ERROR);
+    $redirect_url = 'index_connexion.php?error=' . $error_message;
+    echo "<script>window.location.href='$redirect_url';</script>";
 }
+
 
 // CO BDD + récup recettes
 try {
