@@ -6,7 +6,7 @@ require_once 'functions/functionSQL.php';
 
 // CO BDD + fonction récupération recette
 try {
-    $recettes = getRecipesCook();
+    $recettes = getActiveRecipes();
 } catch (PDOException $e) {
     echo "Erreur lors de la récupération des produits";
     exit;

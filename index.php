@@ -21,7 +21,7 @@ if (isset($_POST['email'])) { // Formulaire soumis
     }
 }
 
-$recettes = getRecipesCook();
+$recettes = getActiveRecipes();
 ?>
 
 <!-- Background image -->
